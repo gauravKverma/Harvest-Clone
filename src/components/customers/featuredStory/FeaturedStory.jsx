@@ -6,7 +6,7 @@ export const FeaturedStory = () => {
     <div className={styles.featureContainer}>
 
       <div>
-        <img src="https://www.getharvest.com/hs-fs/hubfs/customer-profile.jpg?width=1181&name=customer-profile.jpg" alt="featured picture" />
+        <img src="https://www.getharvest.com/hs-fs/hubfs/customer-profile.jpg?width=1181&name=customer-profile.jpg" alt="featured" />
       </div>
 
       <div className={styles.textDiv}>

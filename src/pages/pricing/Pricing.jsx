@@ -8,6 +8,8 @@ import FeaturesGrid from "./smaller_components/FeaturesGrid";
 import FlexBoxes from "./smaller_components/FlexBoxes";
 import FAQ from "./smaller_components/FAQ";
 import Review from "./smaller_components/Review";
+import { Navbar } from "../../components/navbar/Navbar";
+import { Footer } from "../../components/footer/Footer";
 
 let data = [
   {
@@ -43,55 +45,55 @@ const Pricing = () => {
   const [plan, setPlan] = useState(false);
 
   return (
-    <div className={styles.container}>
-      <Heading fontSize="50px" fontWeight="400" textAlign="center">
-        <a id="plans">Pricing</a>
-      </Heading>
-      <br />
-      <Flex gap="15px" alignItems="center" justifyContent="center">
-        <Text fontSize="18px">Monthly</Text>
-        <Switch
-          colorScheme="red"
-          size="lg"
-          onChange={(e) => setPlan(e.target.checked)}
-          sx={{
-            "span.chakra-switch__track:not([data-checked])": {
-              backgroundColor: "#fa5d00",
-            },
-          }}
-        />
-        <Text fontSize="18px">Annual</Text>
-      </Flex>
-      <Text color="#6D6E6D" padding="16px 0px 41px 0px" textAlign="center">
-        Save <span style={{ color: "black" }}>10%</span> with annual plan
-      </Text>
-      <Flex justifyContent="center" gap="40px" paddingBottom="77px">
-        <PriceBox data={data[0]} />
-        {plan ? <PriceBox data={data[2]} /> : <PriceBox data={data[1]} />}
-      </Flex>
-      <CompanyLogo opacity={0.4} />
-      <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
-      <Heading
-        textAlign="center"
-        fontSize="42px"
-        margin="80px 0px 40px 0px"
-        fontWeight="300"
-      >
-        Features
-      </Heading>
-      <FeaturesGrid />
-      <Box className={styles.hr} />
-      <FlexBoxes />
-      <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
-      <FAQ />
-      <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
-      <Review />
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <button className={styles.toPlansButton}>
-          <a href="#plans">{"Back to Plans & Pricing"}</a>
-        </button>
+      <div className={styles.container}>
+        <Heading fontSize="50px" fontWeight="400" textAlign="center">
+          <a id="plans">Pricing</a>
+        </Heading>
+        <br />
+        <Flex gap="15px" alignItems="center" justifyContent="center">
+          <Text fontSize="18px">Monthly</Text>
+          <Switch
+            colorScheme="red"
+            size="lg"
+            onChange={(e) => setPlan(e.target.checked)}
+            sx={{
+              "span.chakra-switch__track:not([data-checked])": {
+                backgroundColor: "#fa5d00",
+              },
+            }}
+          />
+          <Text fontSize="18px">Annual</Text>
+        </Flex>
+        <Text color="#6D6E6D" padding="16px 0px 41px 0px" textAlign="center">
+          Save <span style={{ color: "black" }}>10%</span> with annual plan
+        </Text>
+        <Flex justifyContent="center" gap="40px" paddingBottom="77px">
+          <PriceBox data={data[0]} />
+          {plan ? <PriceBox data={data[2]} /> : <PriceBox data={data[1]} />}
+        </Flex>
+        <CompanyLogo opacity={0.4} />
+        <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
+        <Heading
+          textAlign="center"
+          fontSize="42px"
+          margin="80px 0px 40px 0px"
+          fontWeight="300"
+        >
+          Features
+        </Heading>
+        <FeaturesGrid />
+        <Box className={styles.hr} />
+        <FlexBoxes />
+        <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
+        <FAQ />
+        <Box borderTop="1px solid #fa5d00" width="100%" marginTop="2rem"></Box>
+        <Review />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button className={styles.toPlansButton}>
+            <a href="#plans">{"Back to Plans & Pricing"}</a>
+          </button>
+        </div>
       </div>
-    </div>
   );
 };
 
