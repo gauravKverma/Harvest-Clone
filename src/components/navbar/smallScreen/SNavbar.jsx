@@ -72,7 +72,7 @@ const SNavbar = () => {
           <DrawerBody>
             <Box lineHeight="7vh" fontWeight="bold" mb="5vh">
               <Box borderTop="1px solid #4a4b49">
-                <ButtonLink1 to={'/wharvest'} >Why Harvest?</ButtonLink1>
+                <ButtonLink1 to={'/whyharvest'} >Why Harvest?</ButtonLink1>
               </Box>
               <Box borderTop="1px solid #4a4b49">
                 <ButtonLink1 to={'/features'} >Features</ButtonLink1>

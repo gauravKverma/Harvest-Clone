@@ -26,10 +26,6 @@ const integrationsLinks = [
 export const Integrations = () => {
   return (
     <>
-      {/* Navbar is starts here */}
-      <Navbar />
-      {/* navbar ends here  */}
-
       <div className={styles.container}>
         <Hero />
         <Search />
@@ -43,9 +39,6 @@ export const Integrations = () => {
         <Build />
         <Start />
       </div>
-
-      {/* Footer is here */}
-      <Footer />
     </>
   );
 };

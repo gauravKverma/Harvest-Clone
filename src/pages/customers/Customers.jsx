@@ -7,8 +7,6 @@ import { CustomerHelp } from "../../components/customers/help/CustomerHelp";
 import { Start } from "../../components/integrations/start/Start";
 import { LeftIntegrations } from "../../components/integrations/leftIntegrations/LeftIntegrations";
 import { Cards } from "../../components/integrations/cards/cards";
-import { Navbar } from "../../components/navbar/Navbar";
-import { Footer } from "../../components/footer/Footer";
 
 const customerLinks = [
   { id: "3295f4461421", linkTexts: "All industries", link: "a" },
@@ -22,10 +20,6 @@ const customerLinks = [
 export const Customers = () => {
   return (
     <>
-      {/* Navbar is starts here */}
-      <Navbar />
-      {/* navbar ends here  */}
-
       <div className={styles.customerContainer}>
         <CustomerHelp />
         <CustomerCount />
@@ -40,9 +34,6 @@ export const Customers = () => {
         </div>
         <Start />
       </div>
-
-      {/* Footer is here */}
-      <Footer />
     </>
   );
 };
