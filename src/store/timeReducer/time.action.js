@@ -12,11 +12,12 @@ export const getTimeAPI = ()=> async (dispatch)=> {
 };
 
 export const postTimeAPI = (data)=> async (dispatch)=> {
-    dispatch({type: types.POST_TIME_LOADING});
+    // dispatch({type: types.POST_TIME_LOADING});
     try {
-        const res = await axios.post(`http://localhost:8080/timeDatas`, data);       
-        dispatch({type: types.POST_TIME_SUCCESS, payload: res.data});
+        const res = await axios.post(`http://localhost:8080/timeDatas`, data);
+        dispatch(getTimeAPI());       
+        // dispatch({type: types.POST_TIME_SUCCESS, payload: res.data});
     } catch {
-        dispatch({type: types.POST_TIME_ERROR});        
+        // dispatch({type: types.POST_TIME_ERROR});        
     }
 };

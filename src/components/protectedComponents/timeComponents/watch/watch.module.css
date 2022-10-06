@@ -1,0 +1,12 @@
+.outputDiv2{
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+.outputbutton1{
+    background-color: #000;
+    color: #fff;
+    font-size: 1.2vw;
+    padding: 1px 8px;
+    border-radius: 5px;
+}

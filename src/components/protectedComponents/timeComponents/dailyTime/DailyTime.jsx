@@ -4,24 +4,16 @@ import { getTimeAPI } from "../../../../store/timeReducer/time.action";
 import { PaginDate } from "../paginDate/PaginDate";
 import { TrackTime } from "../trackTime/TrackTime";
 import styles from "./dailyTime.module.css";
+import {Watch} from "../watch/watch";
+import { Edit } from "../edit/Edit";
 
 export const DailyTime = () => {
   const dispatch = useDispatch();
   const {loading, error, timeData} = useSelector((state)=> state.time)
   const [dateData, setDateData] = useState({});  
   const [edit, setedit] = useState(false);
-  const timerId = useRef(null);
-  const [timer, setTimer] = useState(0);
-
   // console.log(dateData, edit);
-  console.log(timeData);
-
-  const start = () => {
-    timerId= setInterval(() => {
-        setTimer((timer)=> timer - 1);
-    }, 1000);
-  }
-  const stop = () => {}  
+  // console.log(timeData);
 
   useEffect(()=> {
     dispatch(getTimeAPI());
@@ -79,9 +71,9 @@ export const DailyTime = () => {
             <p>{el.design}</p>
           </div>
           <div className={styles.outputDiv2}>
-            <h1><span>{timer}</span>: <span>00</span></h1>
-            <div><button className={styles.outputbutton1}>Stop</button></div>
-            <div><button onClick={()=> setedit(!edit)} className={styles.outputbutton2}>Edit</button></div>
+            <Watch />
+            <Edit/>            
+            {/* <div><button onClick={()=> setedit(!edit)} className={styles.outputbutton2}>Edit</button></div> */}
           </div>
         </div>
         ))}      
@@ -89,3 +81,18 @@ export const DailyTime = () => {
     </div>
   );
 };
+
+/*
+{
+    "client": "Your client",
+    "design": "Marketing",
+    "optionaldata": "abcdef",
+    "stoptime": "454",
+    "day": "Saturday",
+    "date": 27,
+    "month": "August",
+    "year": 2022,
+    "fullUserDate": "2022-08-27T17:10:53.829Z",
+    "id": 1
+}
+*/
